@@ -22,26 +22,28 @@ To write a C Program to convert a given decimal value to binary using function w
 
 ## Program:
 ```
-#include<stdio.h>
-Int dectobin(int d){
-int bin =0,base=1,rem; 
-while(d>0)
-{
-rem=d%2; 
-bin=bin+rem*base; 
-d=d/2; 
-base=base*10;
-}
-printf(" = %d in binary",bin); 
-return 0;
-}
+#include <stdio.h>
+
 int main()
 {
-int dec; 
-scanf("%d",&dec);
-printf("%d in decimal",dec); 
-dectobin(dec);
-return 0;
+    int n, r, b = 0, p = 1;
+
+    scanf("%d", &n);
+
+    int x = n;
+
+    while (x > 0)
+    {
+        r = x % 2;
+        b = b + r * p;
+        p = p * 10;
+        x = x / 2;
+    }
+
+    printf("%d in decimal = %d in binary", n, b);
+
+    return 0;
+}
 ```
 
 ## Output:
